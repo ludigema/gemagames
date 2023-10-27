@@ -1,8 +1,8 @@
 import tkinter as tk
 from tkinter import messagebox
 
-class Morpion:
- def __init__(self, root):
+ class Morpion:
+    def __init__(self, root):
         self.root = root
         self.root.title("Morpion")
         self.current_player = "X"
@@ -17,7 +17,7 @@ class Morpion:
             button.grid(row=row, column=col)
 
 
-def check_winner(self):
+    def check_winner(self):
         # Vérification des lignes, colonnes et diagonales
         for i in range(3):
             if self.board[i] == self.board[i + 3] == self.board[i + 6] != "":
@@ -44,3 +44,15 @@ def check_winner(self):
             else:
                 self.current_player = "O" if self.current_player == "X" else "X"
 
+    def reset_board(self):
+        # Réinitialisation du plateau de jeu
+        self.board = [""] * 9
+        for button in self.buttons:
+            button.config(text="")
+        self.current_player = "X"
+
+
+     if __name__ == "__main__":
+          root = tk.Tk()
+          game = Morpion(root)
+          root.mainloop()

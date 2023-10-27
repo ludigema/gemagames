@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
+
 class Morpion:
  def __init__(self, root):
         self.root = root

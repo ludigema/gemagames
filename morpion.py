@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
 
- class Morpion:
+class Morpion:
     def __init__(self, root):
         self.root = root
         self.root.title("Morpion")
@@ -52,7 +52,7 @@ from tkinter import messagebox
         self.current_player = "X"
 
 
-     if __name__ == "__main__":
+if __name__ == "__main__":
           root = tk.Tk()
           game = Morpion(root)
           root.mainloop()

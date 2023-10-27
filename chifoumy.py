@@ -46,8 +46,8 @@ def shifoumi():
 
 	continuer = ""
 	while continuer != "N":
-		joueur = choixDujoueur();
-		ordinateur = randomOrdi();
+		joueur = choixDujoueur()
+		ordinateur = randomOrdi()
 
 		print(joueur,ordinateur)
 

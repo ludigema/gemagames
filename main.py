@@ -11,27 +11,51 @@ def main():
 	return user_input
 
 def shifoumi():
-	score=0
-	print("-------------------------")
-	print("pierre - Choix A ")
-	print("feuille - Choix B")
-	print("ciseaux - Choix C")
-	joueur=str()
-	Choix_du_jouer = str(input("Entrer la lettre associé à votre action : "))
-	print("-------------------------")
-	if Choix_du_jouer=='A':
-		joueur=='pierre'
-	elif Choix_du_jouer=='B':
-		joueur=='feuille'
-	else:
-		joueur=='ciseaux'
-	Choix_de_lordi=random.randrange(1, 3)
-	if Choix_de_lordi==1:
-		joueur=='pierre'
-	elif Choix_de_lordi==2:
-		joueur=='feuille'
-	else:
-		joueur=='ciseaux'
+	score_joueur=int()
+	score_ordinateur=int()
+
+	while True:
+		print("-------------------------")
+		print("pierre - Choix A ")
+		print("feuille - Choix B")
+		print("ciseaux - Choix C")
+		joueur=str()
+		ordinateur=str()
+		Choix_du_jouer = str(input("Entrer la lettre associé à votre action : "))
+		print("-------------------------")
+		if Choix_du_jouer=='A':
+			joueur='pierre'
+		elif Choix_du_jouer=='B':
+			joueur='feuille'
+		else:
+			joueur='ciseaux'
+		Choix_de_lordi=random.randrange(1, 3)
+		
+
+		if Choix_de_lordi==0:
+			ordinateur='pierre'
+		elif Choix_de_lordi==1:
+			ordinateur='feuille'
+		else:
+			ordinateur='ciseaux'
+		print(joueur,ordinateur)
+		if joueur == ordinateur:
+			print("Égalité !")
+			
+		elif (joueur == 'pierre' and ordinateur == 'ciseaux') or \
+			(joueur == 'papier' and ordinateur == 'pierre') or \
+			(joueur == 'ciseaux' and ordinateur == 'papier'):
+				print("Le joueur gagne !")
+				score_joueur += 1
+		else:
+				print("L'ordinateur gagne !")
+				score_ordinateur += 1
+				print("-------------------------")
+		print("Le score du joueur est : ", score_joueur, " |", "Le score de l'ordinateur est :",score_ordinateur)
+		print("Voulez vous refaire une partie ? Oui (O)/ Non (N) ")
+		continuer = str(input("Entrer la lettre O ou N : "))
+		if continuer == 'N':
+			break
 
 
 if __name__ == '__main__':
@@ -39,7 +63,4 @@ if __name__ == '__main__':
 	if Numero_de_selection==2:
 		shifoumi()
 
-
-# Choix pierre feuille
-# Random de la machine
 
